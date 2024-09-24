@@ -19,7 +19,7 @@ class Sensors:
             
         def update(self):
             self.values = self.sensor.get_values()
-            self.temperature = values["temperature"]
+            self.temperature = self.values["temperature"]
             self.pressure = self.values["pressure"]
             self.altitude = self.values["altitude"]
         
@@ -46,8 +46,8 @@ class Sensors:
             def update(self):
                 self.values = self.sensor.get_values("gyroscope")
                 self.x = self.values["gyroscope"]["x"]
-                self.y = self.values["gyroscope"]["x"]
-                self.z = self.values["gyroscope"]["x"]
+                self.y = self.values["gyroscope"]["y"]
+                self.z = self.values["gyroscope"]["z"]
                 
             def read(self, form="string"):
                 if form == "string":
